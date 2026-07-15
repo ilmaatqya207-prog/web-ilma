@@ -1,0 +1,609 @@
+/* ===========================
+      GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ===========================
+        BODY
+=========================== */
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:linear-gradient(
+        -45deg,
+        #6b4f3b,
+        #9c7a5b,
+        #d9c5b2,
+        #f5ebe0,
+        #c7a17a
+    );
+
+    background-size:500% 500%;
+
+    animation:bgMove 18s ease infinite;
+
+}
+
+/* Background bergerak */
+
+@keyframes bgMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* ===========================
+        GLOW
+=========================== */
+
+.light{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:.45;
+
+animation:glowMove 12s infinite alternate;
+
+}
+
+.light-one{
+
+width:350px;
+height:350px;
+
+background:#fff3df;
+
+top:-120px;
+left:-80px;
+
+}
+
+.light-two{
+
+width:320px;
+height:320px;
+
+background:#ffe4c7;
+
+bottom:-120px;
+right:-100px;
+
+animation-delay:3s;
+
+}
+
+@keyframes glowMove{
+
+0%{
+
+transform:scale(1);
+
+}
+
+100%{
+
+transform:scale(1.35);
+
+}
+
+}
+
+/* ===========================
+      TANAMAN
+=========================== */
+
+.plant{
+
+position:absolute;
+
+font-size:170px;
+
+opacity:.15;
+
+pointer-events:none;
+
+animation:leafFloat 8s ease-in-out infinite;
+
+}
+
+.plant-left{
+
+left:-30px;
+
+bottom:-20px;
+
+transform:rotate(-20deg);
+
+}
+
+.plant-right{
+
+right:-20px;
+
+top:-10px;
+
+transform:rotate(20deg);
+
+animation-delay:2s;
+
+}
+
+@keyframes leafFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================
+     KELopak BUNGA
+=========================== */
+
+.petals{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+top:0;
+
+left:0;
+
+pointer-events:none;
+
+}
+
+.petals span{
+
+position:absolute;
+
+display:block;
+
+font-size:28px;
+
+top:-100px;
+
+animation:fall linear infinite;
+
+opacity:.85;
+
+}
+
+/* Posisi setiap bunga */
+
+.petals span:nth-child(1){
+
+left:5%;
+animation-duration:12s;
+animation-delay:0s;
+
+}
+
+.petals span:nth-child(2){
+
+left:18%;
+animation-duration:16s;
+animation-delay:2s;
+
+}
+
+.petals span:nth-child(3){
+
+left:32%;
+animation-duration:13s;
+animation-delay:1s;
+
+}
+
+.petals span:nth-child(4){
+
+left:48%;
+animation-duration:18s;
+animation-delay:5s;
+
+}
+
+.petals span:nth-child(5){
+
+left:63%;
+animation-duration:15s;
+animation-delay:3s;
+
+}
+
+.petals span:nth-child(6){
+
+left:76%;
+animation-duration:20s;
+animation-delay:2s;
+
+}
+
+.petals span:nth-child(7){
+
+left:88%;
+animation-duration:14s;
+animation-delay:4s;
+
+}
+
+.petals span:nth-child(8){
+
+left:95%;
+animation-duration:17s;
+animation-delay:1s;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:
+translateY(-120px)
+rotate(0deg);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+50%{
+
+transform:
+translateY(50vh)
+translateX(30px)
+rotate(180deg);
+
+}
+
+100%{
+
+transform:
+translateY(110vh)
+translateX(-40px)
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+/* =====================================
+        LOGIN CONTAINER
+===================================== */
+
+.login-container{
+
+    position:relative;
+
+    z-index:10;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+}
+
+/* =====================================
+          LOGIN CARD
+===================================== */
+
+.login-card{
+
+    width:420px;
+
+    padding:45px;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.22);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.18),
+    inset 0 1px 1px rgba(255,255,255,.4);
+
+    animation:cardShow 1s ease;
+
+    transition:.4s;
+
+}
+
+.login-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 35px 70px rgba(0,0,0,.25);
+
+}
+
+@keyframes cardShow{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px) scale(.95);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0) scale(1);
+
+}
+
+}
+
+/* =====================================
+            ICON
+===================================== */
+
+.icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:42px;
+
+    background:rgba(255,255,255,.35);
+
+    box-shadow:0 0 25px rgba(255,255,255,.35);
+
+    margin-bottom:18px;
+
+    animation:iconFloat 3s ease-in-out infinite;
+
+}
+
+@keyframes iconFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+}
+
+/* =====================================
+            TITLE
+===================================== */
+
+.login-card h1{
+
+    text-align:center;
+
+    color:#5b3825;
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#7a5b46;
+
+    margin-top:8px;
+
+    margin-bottom:35px;
+
+    font-size:15px;
+
+}
+
+/* =====================================
+            INPUT
+===================================== */
+
+.input-box{
+
+    position:relative;
+
+    margin-bottom:22px;
+
+}
+
+.input-box i{
+
+    position:absolute;
+
+    left:18px;
+
+    top:18px;
+
+    color:#8b5e3c;
+
+    font-size:18px;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    padding:16px 18px 16px 48px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.70);
+
+    color:#5b3825;
+
+    font-size:15px;
+
+    transition:.35s;
+
+}
+
+.input-box input::placeholder{
+
+    color:#9c7a5b;
+
+}
+
+.input-box input:focus{
+
+    background:white;
+
+    transform:scale(1.02);
+
+    box-shadow:
+    0 0 15px rgba(176,137,104,.45);
+
+}
+
+/* =====================================
+            BUTTON
+===================================== */
+
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(90deg,#8b5e3c,#b08968);
+
+    transition:.35s;
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    background:linear-gradient(90deg,#6b4f3b,#8b5e3c);
+
+    box-shadow:
+    0 12px 25px rgba(107,79,59,.35);
+
+}
+
+/* =====================================
+          CREDIT
+===================================== */
+
+.credit{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    color:#7a5b46;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    opacity:.9;
+
+}
